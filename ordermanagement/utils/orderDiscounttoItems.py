@@ -1,4 +1,4 @@
-from DBLayer.order_management.models import Order, OrderItem
+from uni_db.order_management.models import Order, OrderItem
 
 
 def getTotalSellingPrice(order):
