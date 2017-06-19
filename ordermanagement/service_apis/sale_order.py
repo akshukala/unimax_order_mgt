@@ -3,7 +3,6 @@
     @author = Akshay Kale
     date = 2017-06-16 15:34
 '''
-import json
 
 from flask import current_app as app
 from flask.globals import request
