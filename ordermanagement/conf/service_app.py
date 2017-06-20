@@ -15,6 +15,7 @@ from ordermanagement.conf.config_logger_setup import setup_config_logger
 from ordermanagement.service_apis.ping import Ping
 from ordermanagement.service_apis.sale_order import SaleOrder
 from ordermanagement.service_apis.filter_orders import FilterOrders
+from ordermanagement.service_apis.reports import Reports
 
 # from ordermanagement.service_apis.autocomplete import Autocomplete
 # from ordermanagement.service_apis.sale_order_edit import EditOrder
@@ -41,6 +42,8 @@ app.logger.info("Setting up Resources")
 api.add_resource(Ping, '/ordermanagementservice/ping/')
 api.add_resource(SaleOrder, '/ordermanagementservice/saleorder/')
 api.add_resource(FilterOrders, '/ordermanagementservice/filter_orders/')
+api.add_resource(Reports, '/ordermanagementservice/reports/')
+
 # api.add_resource(EditOrder, '/ordermanagementservice/editorder/')
 # api.add_resource(Save_Edited_Order, '/ordermanagementservice/saveeditorder/')
 # api.add_resource(CouponDetails, '/ordermanagementservice/get_coupons/')
