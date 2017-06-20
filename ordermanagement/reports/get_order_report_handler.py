@@ -5,7 +5,6 @@ from uni_db.order_management.models import (
     Order, OrderItem
 )
 import os
-from datetime import datetime, timedelta
 import xlwt
 from datetime import datetime
 from os.path import dirname
@@ -18,6 +17,7 @@ def assure_path_exists(path):
     dir = os.path.dirname(path)
     if not os.path.exists(dir):
             os.makedirs(dir)
+
 
 def create_excel(path, data):
     # import pdb
@@ -64,7 +64,7 @@ def create_excel(path, data):
     book.save(path)
 
 def handle_request(data):
-    UPLOAD_FOLDER = os.path.join(dirname(app.root_dir), 'Documents')
+    UPLOAD_FOLDER = os.path.join(dirname(app.root_dir), 'documents')
     print UPLOAD_FOLDER
     filename = str(datetime.today().strftime("%d_%m_%y")) + "unimax.xls" 
     path = os.path.join(UPLOAD_FOLDER, filename)
