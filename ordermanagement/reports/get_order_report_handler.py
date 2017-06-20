@@ -30,10 +30,6 @@ def create_excel(path, data):
     style_header_body_title = xlwt.easyxf('align: horiz centre, wrap on; font: bold on, height 200, name Arial; borders: left thin, top thin, bottom thin, right thin')
     style_header_body_text = xlwt.easyxf('align: horiz centre, wrap on; font: height 200, name Arial; borders: left thin, top thin, bottom thin, right thin')
 
-    # sheet1.write_merge(0, 0, 0, 15,"Mainfest for booking of BP-CoD articles",style_header_title)
-    # sheet1.write_merge(1, 1, 0, 15,"Name of Customer/Biller: KrishiEx",style_header_info)
-    # sheet1.write_merge(2, 2, 0, 15,"Customer/BNPL No: 11270",style_header_info)
-    # sheet1.write_merge(3, 3, 0, 15,"Date: " + str(datetime.today().strftime("%d/%m/%y")),style_header_info)
     sheet1.write(4, 0, "Order Id.", style_header_body_title)
     sheet1.write(4, 1, "Order Id.", style_header_body_title)
     sheet1.write(4, 2, "Client Name", style_header_body_title)
