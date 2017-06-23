@@ -116,7 +116,6 @@ class SaleOrderDataHandler():
                 )
                 order_item.order = order
                 order_item.item_name = item['ItemName']
-                order_item.item_sku = item['ItemName']
                 order_item.on_hold = True
                 order_item.save()
                 app.logger.info("Saved Order Items for Order %s",

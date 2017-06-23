@@ -15,21 +15,21 @@ def getItemToUpdateDiscount(oitems):
     oi = oitems[0]
     new_oi = OrderItem()
     new_oi.order = oi.order
-    new_oi.shipping_method_code = oi.shipping_method_code
+    
     new_oi.created_on = oi.created_on
     new_oi.updated_on = oi.updated_on
     new_oi.item_name = oi.item_name
-    new_oi.item_sku = oi.item_sku
+    
     new_oi.status_code = oi.status_code
     new_oi.quantity = 1
-    new_oi.cancellable = oi.cancellable
+#     new_oi.cancellable = oi.cancellable
     new_oi.selling_price = oi.selling_price
     new_oi.list_price = oi.list_price
     new_oi.discount = oi.discount
     new_oi.adj_discount = oi.adj_discount
     new_oi.prepaid_amount = oi.prepaid_amount
-    new_oi.on_hold = oi.on_hold
-    new_oi.facility_code = oi.facility_code
+#     new_oi.on_hold = oi.on_hold
+#     new_oi.facility_code = oi.facility_code
     new_oi.total_price = 0
     new_oi.save()
     new_oi.total_price = (new_oi.selling_price - new_oi.discount) * new_oi.quantity
