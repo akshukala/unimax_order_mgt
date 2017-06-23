@@ -20,9 +20,6 @@ def assure_path_exists(path):
 
 
 def create_excel(path, data):
-    # import pdb
-    # pdb.set_trace()
-    print data.get('to_date')
     book = xlwt.Workbook()
     sheet1 = book.add_sheet("Unimax")
     style_header_title = xlwt.easyxf('alignment: horiz centre; font: bold on, height 230, name Arial; borders: left thin, top thin, bottom thin, right thin')
