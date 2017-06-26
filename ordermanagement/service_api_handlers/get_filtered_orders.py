@@ -6,10 +6,9 @@ from uni_db.order_management.models import (
 )
 
 
-def filter_by_area(area):
+def filter_data(order_obj):
     response = []
-    for order in Order.objects.filter(shipping_address__area=area
-                                      ).exclude(status='CANCELLED'):
+    for order in order_obj:
         order_dict = {}
         order_dict['order_id'] = str(order.sales_order_id)
         order_dict['clientname'] = str(order.owner.client_name)
@@ -29,4 +28,8 @@ def filter_by_area(area):
 
 def handle_request(data):
     if str(data.get('type')) == 'area':
-        return filter_by_area(str(data.get('text_data')))
+        order_obj = Order.objects.filter(shipping_address__area=str(data.get('text_data'))).exclude(status='CANCELLED')
+        return filter_data(order_obj)
+    if str(data.get('type')) == 'name':
+        order_obj = Order.objects.filter(owner__client_id=int(data.get('text_data'))).exclude(status='CANCELLED')[::-1]
+        return filter_data(order_obj)
